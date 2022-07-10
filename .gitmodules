@@ -1,3 +1,0 @@
-[submodule "github_action_example"]
-	path = github_action_example
-	url = https://github.com/xiaoye-hua/github_action_example.git
