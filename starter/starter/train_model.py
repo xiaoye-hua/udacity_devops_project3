@@ -16,25 +16,26 @@ model_dir = '../model/model.pkl'
 data = pd.read_csv(data_dir)
 col_map = dict()
 for col in data.columns:
-    new_col = col.replace(' ', '')
+    new_col = col.replace(' ', '').replace('-', '_')
     col_map[col] = new_col
 data = data.rename(columns=col_map)
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
 
 cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-    "native-country",
+    # "workclass",
+    # "education",
+    # "marital-status",
+    # "occupation",
+    # "relationship",
+    # "race",
+    # "sex",
+    # "native-country",
 ]
 X_train, y_train, encoder, lb = process_data(
     train, categorical_features=cat_features, label="salary", training=True
 )
+
 
 # Train and save a model.
 
@@ -46,6 +47,7 @@ X_test, y_test, _, _ = process_data(test, categorical_features=cat_features,
                                     training=False,
                                     encoder=encoder,
                                     lb=lb)
+
 y_pred = inference(model=model, X=X_test)
 
 precision, recall, fbeta = compute_model_metrics(y=y_test, preds=y_pred)
