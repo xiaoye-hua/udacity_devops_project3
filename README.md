@@ -84,5 +84,6 @@ export PYTHONPATH:
 
 # TODO 
 
-1. [ ] preprocess pipeline
-2. [ ] api data type
+1. [x] preprocess pipeline
+2. [x] api data type
+3. [ ] test

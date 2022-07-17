@@ -9,21 +9,25 @@ import pandas as pd
 
 # Declare the data object with its components and their type.
 class Feature(BaseModel):
-    # education_num: int=Field(default=9, alias='education-num')
-    # capital_loss: int=Field(default=0, alias='capital-loss')
-    a: int=3
-    b: int=4
-
-
-class TaggedItem(BaseModel):
-    name: str
-    tags: Union[str, list]
-    item_id: int
+    workclass: str='Private'
+    education: str='HS-grad'
+    marital_status: str=Field(default='Married-civ-spouse', alias='marital-status')
+    occupation: str='Adm-clerical'
+    relationship: str='Own-child'
+    race: str='Asian-Pac-Islander'
+    sex: str='Male'
+    native_country: str=Field(default='Germany', alias='native-country')
+    capital_loss: int=Field(default=0, alias='capital-loss')
+    capital_gain: int=Field(default=5013, alias='capital-gain')
+    fnlgt: int=37778
+    age: int=34
+    hours_per_week: int=Field(default=44, alias='hours-per-week')
+    education_num: int=Field(default=9, alias='education-num')
 
 app = FastAPI()
 
 model_path = 'model/model.pkl'
-model = joblib.load(model_path)
+pipeline = joblib.load(model_path)
 
 
 @app.get("/")
@@ -33,26 +37,16 @@ async def say_hello():
 
 @app.post("/inference/")
 async def get_inference(
-        # feature: Feature
-        education_num: int=9,
-        capital_loss: int=0
+        feature: Feature
                         ):
-    feature ={'a':education_num, 'b':capital_loss}
-    for key, value in feature.items():
-        feature[key] = [value]
-    res = model.predict(pd.DataFrame(feature)).tolist()[0]
+    # feature ={'education_num':education_num, 'capital_loss':capital_loss}
+    feature_dic = {}
+    for key, value in feature.dict().items():
+        key = key.replace('_', '-')
+        feature_dic[key] = [value]
+    feature_df = pd.DataFrame(feature_dic)
+    res = pipeline.predict(feature_df).tolist()[0]
     return res
-    # return feature
-# A GET that in this case just returns the item_id we pass,
-# but a future iteration may link the item_id here to the one we defined in our TaggedItem.
-# @app.get("/items/")
-# async def get_items(item_id: int=5, count: int = 1):
-#     return {"fetch": f"Fetched {count} of {item_id}"}
-
-# This allows sending of data (our TaggedItem) via POST to the API.
-# @app.get("/items/")
-# async def create_item(item: TaggedItem):
-#     return item
 
 if __name__ == "__main__":
     uvicorn.run('main:app', debug=True, reload=True)

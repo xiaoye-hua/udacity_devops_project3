@@ -18,14 +18,44 @@ def test_say_hello():
 
 
 def test_inference():
-    data = {'education_num': 9, 'capital_loss': 0}
+    data = {
+      "workclass": "Private",
+      "education": "HS-grad",
+      "marital-status": "Married-civ-spouse",
+      "occupation": "Adm-clerical",
+      "relationship": "Own-child",
+      "race": "Asian-Pac-Islander",
+      "sex": "Male",
+      "native-country": "Germany",
+      "capital-loss": 0,
+      "capital-gain": 5013,
+      "fnlgt": 37778,
+      "age": 34,
+      "hours-per-week": 44,
+      "education-num": 9
+    }
     r = client.post(url='/inference/', data=data)
     print(r.json())
     assert r.status_code == 200
 
 
 def test_inference2():
-    data = {'education_num': 40, 'capital_loss': 3}
+    data = {
+      "workclass": "State-gov",
+      "education": "7th-8th",
+      "marital-status": "Married-civ-spouse",
+      "occupation": "Adm-clerical",
+      "relationship": "Not-in-family",
+      "race": "Asian-Pac-Islander",
+      "sex": "Male",
+      "native-country": "Germany",
+      "capital-loss": 0,
+      "capital-gain": 53,
+      "fnlgt": 38,
+      "age": 20,
+      "hours-per-week": 30,
+      "education-num": 3
+    }
     r = client.post(url='/inference/', data=data)
     print(r.json())
     assert r.status_code == 200
