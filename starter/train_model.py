@@ -11,13 +11,15 @@ import pandas as pd
 import joblib
 from xgboost import XGBClassifier
 from starter.ml.data import process_data
-from starter.ml.model import train_model, compute_model_metrics, inference
+from starter.ml.model import train_model, compute_model_metrics, inference, compute_sliced_model_metrics
 
 logging.basicConfig(level='INFO',
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%a, %d %b %Y %H:%M:%S',
-                    # filename=os.path.join(log_dir, log_file)
+                    filename='../slice_output.txt'
                     )
+console = logging.StreamHandler()
+logging.getLogger().addHandler(console)
 # Config
 data_dir = '../data/census.csv'
 model_dir = '../model/model.pkl'
@@ -79,37 +81,27 @@ pipeline = Pipeline([
 
 logging.info(f"Pipeline info:")
 logging.info(pipeline)
-
-# X_train, y_train, encoder, lb = process_data(
-#     train, categorical_features=cat_features, label="salary", training=True
-# )
-
-
-# Train and save a model.
-
-# model = train_model(X_train=X_train, y_train=y_train)
-
-
-# X_test, y_test, _, _ = process_data(test, categorical_features=cat_features,
-#                                     label="salary",
-#                                     training=False,
-#                                     encoder=encoder,
-#                                     lb=lb)
 logging.info(f"Train data info: ")
 logging.info(X_train[cat_features+passthrough_features].info())
-for col in cat_features+passthrough_features:
-    logging.info(f"{col}:")
-    logging.info(X_train[col].unique()[:3])
+# for col in cat_features+passthrough_features:
+#     logging.info(f"{col}:")
+#     logging.info(X_train[col].unique()[:3])
 pipeline.fit(X=X_train, y=y_train)
 
-y_pred = pipeline.predict(X=X_test)
+X_test['predict'] = pipeline.predict(X=X_test)
     # inference(model=model, X=X_test)
 
-precision, recall, fbeta = compute_model_metrics(y=y_test, preds=y_pred)
+precision, recall, fbeta = compute_model_metrics(y=y_test, preds=X_test['predict'])
+logging.info(f"Metric for all data:")
+logging.info(f"{precision}, {recall}, {fbeta}")
 
-print(f"{precision}, {recall}, {fbeta}")
+
+for col in cat_features:
+    compute_sliced_model_metrics(col=col, df=X_test, y_df=y_test)
+
 
 file_name = joblib.dump(
     value=pipeline,
     filename=model_dir
 )[0]
+logging.info(f"Saving pipeline to {file_name}")

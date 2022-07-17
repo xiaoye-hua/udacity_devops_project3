@@ -1,0 +1,242 @@
+Sun, 17 Jul 2022 16:25:23 train_model.py[line:82] INFO Pipeline info:
+Sun, 17 Jul 2022 16:25:23 train_model.py[line:83] INFO Pipeline(steps=[('transformer',
+                 ColumnTransformer(transformers=[('one_hot',
+                                                  OneHotEncoder(handle_unknown='ignore'),
+                                                  ['workclass', 'education',
+                                                   'marital-status',
+                                                   'occupation', 'relationship',
+                                                   'race', 'sex',
+                                                   'native-country']),
+                                                 ('passthrough', 'passthrough',
+                                                  ['capital-loss',
+                                                   'capital-gain', 'fnlgt',
+                                                   'education-num', 'age',
+                                                   'hours-per-week'])])),
+                ('model',
+                 XGBClassifier(...
+                               gamma=None, gpu_id=None, grow_policy=None,
+                               importance_type=None,
+                               interaction_constraints=None, learning_rate=None,
+                               max_bin=None, max_cat_to_onehot=None,
+                               max_delta_step=None, max_depth=None,
+                               max_leaves=None, min_child_weight=None,
+                               missing=nan, monotone_constraints=None,
+                               n_estimators=100, n_jobs=None,
+                               num_parallel_tree=None, predictor=None,
+                               random_state=None, reg_alpha=None,
+                               reg_lambda=None, ...))])
+Sun, 17 Jul 2022 16:25:23 train_model.py[line:84] INFO Train data info: 
+Sun, 17 Jul 2022 16:25:23 train_model.py[line:85] INFO None
+Sun, 17 Jul 2022 16:25:24 train_model.py[line:95] INFO Metric for all data:
+Sun, 17 Jul 2022 16:25:24 train_model.py[line:96] INFO 1.0, 1.0, 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: workclass
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Private
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: ?
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Federal-gov
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Local-gov
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: State-gov
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Self-emp-inc
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Self-emp-not-inc
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Never-worked
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Without-pay
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: education
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Some-college
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Masters
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Bachelors
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Assoc-voc
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: HS-grad
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 10th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 11th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 7th-8th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 1st-4th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Assoc-acdm
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 12th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 9th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Preschool
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Prof-school
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: 5th-6th
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Doctorate
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: marital-status
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Married-civ-spouse
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Separated
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Divorced
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Never-married
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Widowed
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Married-AF-spouse
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Married-spouse-absent
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: occupation
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Craft-repair
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: ?
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Exec-managerial
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Other-service
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Adm-clerical
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Tech-support
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Machine-op-inspct
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Prof-specialty
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Sales
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Transport-moving
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Handlers-cleaners
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Farming-fishing
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Protective-serv
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Priv-house-serv
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Armed-Forces
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: relationship
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Husband
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Wife
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Unmarried
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Not-in-family
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Other-relative
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Own-child
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: race
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: White
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Other
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Amer-Indian-Eskimo
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Black
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Asian-Pac-Islander
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: sex
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Male
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Female
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:55] INFO Sliced precision, recall & fbeta; Col: native-country
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: United-States
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Puerto-Rico
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Mexico
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Taiwan
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Hungary
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: El-Salvador
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Dominican-Republic
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Nicaragua
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Guatemala
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Columbia
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: ?
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Cambodia
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Germany
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: China
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Philippines
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Greece
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Jamaica
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Italy
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Canada
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Haiti
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: England
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Thailand
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Vietnam
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: India
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Japan
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Iran
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Cuba
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: France
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Trinadad&Tobago
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: South
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Peru
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Portugal
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Hong
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Laos
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Poland
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Ecuador
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Ireland
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Outlying-US(Guam-USVI-etc)
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Yugoslavia
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Honduras
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 model.py[line:60] INFO     value: Scotland
+Sun, 17 Jul 2022 16:25:24 model.py[line:61] INFO     1.0; 1.0; 1.0
+Sun, 17 Jul 2022 16:25:24 train_model.py[line:107] INFO Saving pipeline to ../model/model.pkl

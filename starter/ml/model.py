@@ -1,5 +1,9 @@
+import logging
+
+import pandas as pd
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from xgboost import XGBClassifier
+logging.getLogger(__name__)
 
 
 # Optional: implement hyperparameter tuning.
@@ -44,6 +48,17 @@ def compute_model_metrics(y, preds):
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
     return precision, recall, fbeta
+
+
+def compute_sliced_model_metrics(col: str, df: pd.DataFrame, y_df):
+    unique_lst = df[col].unique()
+    logging.info(f"Sliced precision, recall & fbeta; Col: {col}")
+    for value in unique_lst:
+        preds = df[df[col]==value]['predict']
+        y = y_df[df[col]==value]
+        precision, recall, fbeta = compute_model_metrics(y=y, preds=preds)
+        logging.info(f"    value: {value}")
+        logging.info(f"    {precision}; {recall}; {fbeta}")
 
 
 def inference(model: XGBClassifier, X):
