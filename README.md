@@ -79,5 +79,9 @@ To use your new S3 bucket from the AWS CLI you will need to create an IAM user w
 
 # How to run it
 ```shell script
-export PYTHONPATH:
+heroku login 
+
+heroku create 
+
+git push heroku main
 ```
