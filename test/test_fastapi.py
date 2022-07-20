@@ -34,11 +34,11 @@ def test_inference():
       "hours-per-week": 44,
       "education-num": 9
     }
-    r = client.post(url='/inference/', data=data)
-    print(r.json())
+    r = client.post(url='/inference/', json=data)
+    assert r.json() == 0, r.json()
     assert r.status_code == 200
-
-
+#
+#
 def test_inference2():
     data = {
       "workclass": "State-gov",
@@ -56,6 +56,6 @@ def test_inference2():
       "hours-per-week": 30,
       "education-num": 3
     }
-    r = client.post(url='/inference/', data=data)
-    print(r.json())
+    r = client.post(url='/inference/', json=data)
+    assert r.json() == 0, r.json()
     assert r.status_code == 200

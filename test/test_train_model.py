@@ -30,7 +30,3 @@ def test_compute_model_metrics3():
     precision, recall, fscore = compute_model_metrics(y=y, preds=preds)
     assert precision == 0
     assert recall == 1
-
-
-
-# def

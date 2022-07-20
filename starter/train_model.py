@@ -49,6 +49,7 @@ feature_col = list(set(data.columns) - set([label]))
 
 X_train, X_test, y_train, y_test = train_test_split(data[feature_col], data[label], test_size=0.20)
 
+# logging.info(f"")
 cat_features = [
     "workclass",
     "education",
@@ -83,6 +84,8 @@ logging.info(f"Pipeline info:")
 logging.info(pipeline)
 logging.info(f"Train data info: ")
 logging.info(X_train[cat_features+passthrough_features].info())
+logging.info(X_test[cat_features+passthrough_features].info())
+
 # for col in cat_features+passthrough_features:
 #     logging.info(f"{col}:")
 #     logging.info(X_train[col].unique()[:3])

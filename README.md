@@ -86,4 +86,5 @@ export PYTHONPATH:
 
 1. [x] preprocess pipeline
 2. [x] api data type
-3. [ ] test_fastpai
+3. [x] test_fastpai
+4. [x] model card
