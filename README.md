@@ -81,10 +81,3 @@ To use your new S3 bucket from the AWS CLI you will need to create an IAM user w
 ```shell script
 export PYTHONPATH:
 ```
-
-# TODO 
-
-1. [x] preprocess pipeline
-2. [x] api data type
-3. [x] test_fastpai
-4. [x] model card
